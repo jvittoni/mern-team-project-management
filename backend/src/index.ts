@@ -1,7 +1,8 @@
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
-import session from "cookie-session";
+// import session from "cookie-session";
+import session from "express-session";
 import { config } from "./config/app.config";
 import connectDatabase from "./config/database.config";
 import { errorHandler } from "./middleware/errorHandler.middleware";
@@ -9,23 +10,47 @@ import { HTTPSTATUS } from "./config/http.config";
 import { asyncHandler } from "./middleware/asyncHandler.middleware";
 import { BadRequestException } from "./utils/appErrors";
 import { ErrorCodeEnum } from "./enums/error-code.enum";
+import "./config/passport.config";
+import passport from "passport";
+import authRoutes from "./routes/auth.route";
 
 const app = express();
+
+const BASE_PATH = config.BASE_PATH;
 
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+// app.use(
+//     session({
+//         name: "session",
+//         keys: [config.SESSION_SECRET],
+//         maxAge: 24 * 60 * 60 * 1000,
+//         secure: config.NODE_ENV === "production",
+//         httpOnly: true,
+//         sameSite: "lax",
+//     })
+// );
+
 app.use(
     session({
-        name: "session",
-        keys: [config.SESSION_SECRET],
-        maxAge: 24 * 60 * 60 * 1000,
-        secure: config.NODE_ENV === "production",
-        httpOnly: true,
-        sameSite: "lax",
+        name: "connect.sid",
+        secret: config.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 24 * 60 * 60 * 1000, // 1 day
+            // secure: config.NODE_ENV === "production",
+            secure: false,
+            httpOnly: true,
+            sameSite: "lax",
+        },
     })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(
     cors({
@@ -44,6 +69,8 @@ app.get(`/`, asyncHandler(async (req: Request, res: Response, next: NextFunction
     });
 })
 );
+
+app.use(`${BASE_PATH}/auth`, authRoutes);
 
 app.use(errorHandler);
 
