@@ -8,6 +8,11 @@ export const AUTH_ROUTES = {
   GOOGLE_OAUTH_CALLBACK: "/google/oauth/callback",
 };
 
+
+export const PROTECTED_ROUTES = {
+  WORKSPACE: "/workspace/:workspaceId"
+};
+
 export const BASE_ROUTE = {
   INVITE_URL: "/invite/workspace/:inviteCode/join",
 };
