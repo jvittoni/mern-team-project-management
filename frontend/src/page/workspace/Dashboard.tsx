@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import RecentMembers from "@/components/workspace/member/recent-members";
-import CreateProjectDialog from "@/components/workspace/project/create-project-dialog";
 import RecentProjects from "@/components/workspace/project/recent-projects";
 import RecentTasks from "@/components/workspace/task/recent-tasks";
 import WorkspaceAnalytics from "@/components/workspace/workspace-analytics";
@@ -26,7 +25,6 @@ const WorkspaceDashboard = () => {
                     <Plus />
                     New Project
                 </Button>
-                <CreateProjectDialog />
                 </div>
                 
             </div>
