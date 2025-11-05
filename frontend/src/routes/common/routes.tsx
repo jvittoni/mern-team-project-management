@@ -7,6 +7,7 @@ import WorkspaceDashboard from "@/page/workspace/Dashboard";
 import ProjectDetails from "@/page/workspace/ProjectDetails";
 import Tasks from "@/page/workspace/Tasks";
 import Members from "@/page/workspace/Members";
+import SettingsWithPermission from "@/page/workspace/Settings";
 
 export const authenticationRoutePaths = [
   { path: AUTH_ROUTES.SIGN_IN, element: <SignIn /> },
@@ -18,7 +19,7 @@ export const protectedRoutePaths = [
   { path: PROTECTED_ROUTES.WORKSPACE, element: <WorkspaceDashboard /> },
   { path: PROTECTED_ROUTES.TASKS, element: <Tasks /> },
   { path: PROTECTED_ROUTES.MEMBERS, element: <Members /> },
-  // { path: PROTECTED_ROUTES.SETTINGS, element: <Settings /> },
+  { path: PROTECTED_ROUTES.SETTINGS, element: <SettingsWithPermission /> },
   { path: PROTECTED_ROUTES.PROJECT_DETAILS, element: <ProjectDetails /> },
 
 ];
