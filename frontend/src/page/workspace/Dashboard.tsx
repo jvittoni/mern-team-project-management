@@ -1,11 +1,15 @@
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import RecentMembers from "@/components/workspace/member/recent-members";
+import CreateProjectDialog from "@/components/workspace/project/create-project-dialog";
 import RecentProjects from "@/components/workspace/project/recent-projects";
 import RecentTasks from "@/components/workspace/task/recent-tasks";
 import WorkspaceAnalytics from "@/components/workspace/workspace-analytics";
+import useCreateProjectDialog from "@/hooks/use-create-project-dialog";
+import { Plus } from "lucide-react";
 
 const WorkspaceDashboard = () => {
-    // const { onOpen } = useCreateProjectDialog();
+    const { onOpen } = useCreateProjectDialog();
     return (
         <main className="flex flex-1 flex-col py-4 md:pt-3">
             <div className="flex items-center justify-between space-y-2 mb-6">
@@ -17,10 +21,14 @@ const WorkspaceDashboard = () => {
                         Here&apos;s an overview for this workspace!
                     </p>
                 </div>
-                {/* <Button onClick={onOpen}>
+                <div>
+                    <Button onClick={onOpen}>
                     <Plus />
                     New Project
-                </Button> */}
+                </Button>
+                <CreateProjectDialog />
+                </div>
+                
             </div>
             <WorkspaceAnalytics />
             <div className="mt-4">
