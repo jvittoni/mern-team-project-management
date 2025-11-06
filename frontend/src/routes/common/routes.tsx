@@ -9,6 +9,7 @@ import Tasks from "@/page/workspace/Tasks";
 import Members from "@/page/workspace/Members";
 import SettingsWithPermission from "@/page/workspace/Settings";
 import CalendarDisplay from "@/page/workspace/CalendarDisplay";
+import Analytics from "@/page/workspace/analytics";
 
 export const authenticationRoutePaths = [
   { path: AUTH_ROUTES.SIGN_IN, element: <SignIn /> },
@@ -22,7 +23,8 @@ export const protectedRoutePaths = [
   { path: PROTECTED_ROUTES.MEMBERS, element: <Members /> },
   { path: PROTECTED_ROUTES.SETTINGS, element: <SettingsWithPermission /> },
   { path: PROTECTED_ROUTES.PROJECT_DETAILS, element: <ProjectDetails /> },
-  { path: PROTECTED_ROUTES.CALENDAR, element: < CalendarDisplay />}
+  { path: PROTECTED_ROUTES.CALENDAR, element: < CalendarDisplay /> },
+  { path: PROTECTED_ROUTES.ANALYTICS, element: <Analytics /> },
 ];
 
 export const baseRoutePaths = [

@@ -6,6 +6,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getProjectByIdQueryFn } from "@/lib/api";
 import { Permissions } from "@/constant";
 import PermissionsGuard from "@/components/reusable/permission-guard";
+import CreateTaskDialog from "../task/create-task-dialog";
 
 const ProjectHeader = () => {
     const param = useParams();
@@ -51,8 +52,7 @@ const ProjectHeader = () => {
                     <EditProjectDialog project={project} />
                 </PermissionsGuard>
             </div>
-            // TODO TASK DIALOG
-            {/* <CreateTaskDialog projectId={projectId} /> */}
+            <CreateTaskDialog projectId={projectId} />
         </div>
     );
 };
