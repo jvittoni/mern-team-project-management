@@ -188,3 +188,11 @@ em-emoji-picker {
     @apply text-muted-foreground;
   }
 }
+
+.fc-event {
+  cursor: pointer;
+}
+
+.fc-day-today {
+    background-color: #d0f0fd !important; /* light blue */
+}
