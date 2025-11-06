@@ -82,7 +82,7 @@ export default function EditWorkspaceForm() {
     return (
         <div className="w-full h-auto max-w-full">
             <div className="h-full">
-                <div className="mb-5 border-b">
+                <div className="my-5 border-b">
                     <h1
                         className="text-[17px] tracking-[-0.16px] dark:text-[#fcfdffef] font-semibold mb-1.5
            text-center sm:text-left"

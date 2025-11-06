@@ -9,14 +9,14 @@ const AnalyticsCard = (props: {
     const { title, value, isLoading } = props;
 
     const getArrowIcon = () => {
-        if (title === "Overdue Task") {
+        if (title === "Overdue Tasks") {
             return value > 0 ? (
                 <ArrowBigDown strokeWidth={2.5} className="h-4 w-4 text-red-500" />
             ) : (
                 <ArrowBigUp strokeWidth={2.5} className="h-4 w-4 text-green-500" />
             );
         }
-        if (title === "Completed Task" || title === "Total Task") {
+        if (title === "Completed Tasks" || title === "Total Tasks") {
             return value > 0 ? (
                 <ArrowBigUp strokeWidth={2.5} className="h-4 w-4 text-green-500" />
             ) : (

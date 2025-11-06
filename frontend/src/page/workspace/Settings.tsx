@@ -12,11 +12,11 @@ const Settings = () => {
             <Separator className="my-4 " />
             <main>
                 <div className="w-full max-w-3xl mx-auto py-3">
-                    <h2 className="text-[20px] leading-[30px] font-semibold mb-3">
+                    <h2 className="text-2xl leading-[30px] font-semibold mb-3">
                         Workspace Settings
                     </h2>
 
-                    <div className="flex flex-col justify-between min-h-[80vh] pt-0.5 px-0">
+                    <div className="flex flex-col justify-between min-h-[75vh] pt-0.5 px-0">
                         <div className="pt-2">
                             <EditWorkspaceForm />
                         </div>
