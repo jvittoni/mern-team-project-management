@@ -9,7 +9,7 @@ import Tasks from "@/page/workspace/Tasks";
 import Members from "@/page/workspace/Members";
 import SettingsWithPermission from "@/page/workspace/Settings";
 import CalendarDisplay from "@/page/workspace/CalendarDisplay";
-import Analytics from "@/page/workspace/analytics";
+import Analytics from "@/page/workspace/Analytics";
 import ProfileSettings from "@/page/user-profile/profile-settings";
 
 export const authenticationRoutePaths = [
