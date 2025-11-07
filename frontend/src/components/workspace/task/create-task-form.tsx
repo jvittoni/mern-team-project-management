@@ -303,7 +303,7 @@ export default function CreateTaskForm(props: {
                                         >
                                             <FormControl>
                                                 <SelectTrigger>
-                                                    <SelectValue placeholder="Select a assignee" />
+                                                    <SelectValue placeholder="Select an assignee" />
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>

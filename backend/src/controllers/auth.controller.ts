@@ -89,7 +89,7 @@ export const logOutController = asyncHandler(async (req: Request, res: Response)
             .json({ error: "Failed to destroy session" });
         }
 
-        // res.clearCookie("session"); // your cookie name from cookie-session config
+        // res.clearCookie("session"); 
         res.clearCookie("connect.sid", {
           path: "/",
           httpOnly: true,

@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
-// import session from "cookie-session";
 import session from "express-session";
 import { config } from "./config/app.config";
 import connectDatabase from "./config/database.config";
@@ -54,9 +53,6 @@ app.use(
         },
     })
 );
-
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 app.use(
     cors({

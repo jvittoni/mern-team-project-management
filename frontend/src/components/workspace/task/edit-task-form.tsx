@@ -54,14 +54,23 @@ export default function EditTaskForm({ task, onClose }: { task: TaskType; onClos
 
     // Status & Priority Options
     const statusOptions = Object.values(TaskStatusEnum).map((status) => ({
-        label: status.charAt(0) + status.slice(1).toLowerCase(),
+        label: status
+            .toLowerCase()
+            .split("_")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" "),
         value: status,
     }));
 
     const priorityOptions = Object.values(TaskPriorityEnum).map((priority) => ({
-        label: priority.charAt(0) + priority.slice(1).toLowerCase(),
+        label: priority
+            .toLowerCase()
+            .split("_")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" "),
         value: priority,
     }));
+
 
     const formSchema = z.object({
         title: z.string().trim().min(1, { message: "Title is required" }),
