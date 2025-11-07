@@ -44,6 +44,16 @@ export const getCurrentUserQueryFn =
     return response.data;
   };
 
+export const updateUserMutationFn = async (data: {
+  name?: string;
+  email?: string;
+  password?: string;
+}) => {
+  const response = await API.put("/user/update", data);
+  return response.data;
+};
+
+
 //********* WORKSPACE ****************
 //************* */
 

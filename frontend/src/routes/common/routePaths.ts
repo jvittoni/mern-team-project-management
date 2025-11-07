@@ -22,3 +22,7 @@ export const PROTECTED_ROUTES = {
 export const BASE_ROUTE = {
   INVITE_URL: "/invite/workspace/:inviteCode/join",
 };
+
+export const USER_ROUTES = {
+  PROFILE_SETTINGS: "/settings/profile",
+};

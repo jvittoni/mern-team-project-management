@@ -55,8 +55,8 @@ app.use(
     })
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use(
     cors({
@@ -64,6 +64,9 @@ app.use(
         credentials: true,
     })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get(`/`, asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     throw new BadRequestException(

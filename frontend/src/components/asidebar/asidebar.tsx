@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { EllipsisIcon, Loader, LogOut } from "lucide-react";
+import { EllipsisIcon, Loader, LogOut, UserCog } from "lucide-react";
 import {
     Sidebar,
     SidebarHeader,
@@ -31,6 +31,7 @@ import { Separator } from "../ui/separator";
 import useWorkspaceId from "@/hooks/use-workspace-id";
 import { useAuthContext } from "@/context/auth-provider";
 import { NavProjects } from "./nav-projects";
+import { USER_ROUTES } from "@/routes/common/routePaths";
 
 const Asidebar = () => {
     const { isLoading, user } = useAuthContext();
@@ -105,6 +106,26 @@ const Asidebar = () => {
                                         sideOffset={4}
                                     >
                                         <DropdownMenuGroup></DropdownMenuGroup>
+
+                                        <DropdownMenuItem asChild>
+                                            {/* <Link
+                                                to={USER_ROUTES.PROFILE_SETTINGS}
+                                                className="flex items-center gap-2"
+                                            >
+                                                <UserCog className="w-4 h-4" />
+                                                Profile Settings
+                                            </Link> */}
+                                            <Link
+                                                to={USER_ROUTES.PROFILE_SETTINGS}
+                                                state={{ workspaceId }}
+                                                className="flex items-center gap-2"
+                                            >
+                                                <UserCog className="w-4 h-4" />
+                                                Profile Settings
+                                            </Link>
+                                        </DropdownMenuItem>
+
+
                                         <DropdownMenuSeparator />
                                         <DropdownMenuItem onClick={() => setIsOpen(true)}>
                                             <LogOut />

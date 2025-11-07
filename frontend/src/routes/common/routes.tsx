@@ -2,7 +2,7 @@ import GoogleOAuthFailure from "@/page/auth/GoogleOAuthFailure";
 import SignIn from "@/page/auth/Sign-in";
 import SignUp from "@/page/auth/Sign-up";
 import InviteUser from "@/page/invite/InviteUser";
-import { AUTH_ROUTES, BASE_ROUTE, PROTECTED_ROUTES } from "./routePaths";
+import { AUTH_ROUTES, BASE_ROUTE, PROTECTED_ROUTES, USER_ROUTES } from "./routePaths";
 import WorkspaceDashboard from "@/page/workspace/Dashboard";
 import ProjectDetails from "@/page/workspace/ProjectDetails";
 import Tasks from "@/page/workspace/Tasks";
@@ -10,6 +10,7 @@ import Members from "@/page/workspace/Members";
 import SettingsWithPermission from "@/page/workspace/Settings";
 import CalendarDisplay from "@/page/workspace/CalendarDisplay";
 import Analytics from "@/page/workspace/analytics";
+import ProfileSettings from "@/page/user-profile/profile-settings";
 
 export const authenticationRoutePaths = [
   { path: AUTH_ROUTES.SIGN_IN, element: <SignIn /> },
@@ -29,4 +30,8 @@ export const protectedRoutePaths = [
 
 export const baseRoutePaths = [
   { path: BASE_ROUTE.INVITE_URL, element: <InviteUser /> },
+];
+
+export const userRoutePaths = [
+  { path: USER_ROUTES.PROFILE_SETTINGS, element: <ProfileSettings /> },
 ];
